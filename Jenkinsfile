@@ -15,7 +15,7 @@ pipeline {
                 echo 'building project...'
                 sh "mvn compile"
                 sh "mvn package"
-                //sh "mvn test"
+                sh "mvn test"
                 sh "mvn clean install"
             }
         }
