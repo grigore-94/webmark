@@ -1,0 +1,18 @@
+/target/
+!.mvn/com.straighterline.kstream.progress.wrapper.wrapper/maven-com.straighterline.kstream.progress.wrapper.wrapper.jar
+.mvn
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
