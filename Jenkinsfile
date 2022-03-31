@@ -19,11 +19,11 @@ pipeline {
                 sh "mvn clean install"
                 sh "mvn spring-boot:run"
             }
-            stage("run project") {
-                    steps {
-                        sh "mvn spring-boot:run"
-                    }
+        stage("run project") {
+                steps {
+                    sh "mvn spring-boot:run"
                 }
+            }
         }
 
     }
