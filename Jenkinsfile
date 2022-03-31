@@ -17,6 +17,7 @@ pipeline {
                 sh "mvn package"
                 sh "mvn test"
                 sh "mvn clean install"
+                sh "mvn spring-boot:run"
             }
         }
     }
