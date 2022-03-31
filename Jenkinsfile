@@ -1,5 +1,5 @@
 pipeline {
-  agent { label 'linux' }
+  agent { label 'master' }
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
@@ -7,7 +7,7 @@ pipeline {
     HEROKU_API_KEY = credentials('heroku-api-key')
   }
   parameters {
-    string(name: 'APP_NAME', defaultValue: '', description: 'app name ?')
+    string(name: 'APP_NAME', defaultValue: 'webmark-1123', description: 'app name ?')
   }
   stages {
     stage('Build') {
