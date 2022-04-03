@@ -32,7 +32,7 @@ pipeline {
     stage('Release the image') {
       steps {
         bat '''
-          heroku container:release web --app=$APP_NAME
+          heroku container:release web --app=%APP_NAME%
         '''
       }
     }
