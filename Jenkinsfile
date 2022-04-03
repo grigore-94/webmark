@@ -12,6 +12,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
+        print "build"
         sh 'docker build -t grigore-94/webmark-1123:latest .'
       }
     }
