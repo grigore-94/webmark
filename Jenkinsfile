@@ -13,17 +13,17 @@ pipeline {
     stage('Build') {
       steps {
         print "build"
-        bat('docker build -t grigore-94/webmark-1123:latest .')
+        bat 'docker build -t grigore-94/webmark-1123:latest .'
       }
     }
     stage('Login') {
       steps {
-        sh 'echo $HEROKU_API_KEY | docker login --username=_ --password-stdin registry.heroku.com'
+        bat 'echo $HEROKU_API_KEY | docker login --username=_ --password-stdin registry.heroku.com'
       }
     }
     stage('Push to Heroku registry') {
       steps {
-        sh '''
+        bat '''
           docker tag grigore-94/webmark-1123:latest registry.heroku.com/$APP_NAME/web
           docker push registry.heroku.com/$APP_NAME/web
         '''
@@ -31,7 +31,7 @@ pipeline {
     }
     stage('Release the image') {
       steps {
-        sh '''
+        bat '''
           heroku container:release web --app=$APP_NAME
         '''
       }
@@ -39,7 +39,7 @@ pipeline {
   }
   post {
     always {
-      sh 'docker logout'
+      bat 'docker logout'
     }
   }
 }
