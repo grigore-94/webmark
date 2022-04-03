@@ -20,7 +20,7 @@ public class Controller {
     private final AddImageWatermark addImageWatermark;
     @GetMapping("/hello")
     public String hello() throws IOException {
-        return "hello";
+        return "hello!";
     }
 
     @PostMapping(value = "mark-image", produces = MediaType.IMAGE_PNG_VALUE)
