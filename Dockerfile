@@ -7,7 +7,7 @@ COPY pom.xml .
 COPY src src
 RUN ls -alh
 RUN apt update && \
-    apt install dos2unix  && \
+    apt install dos2unix && \
     dos2unix mvnw
 RUN ./mvnw install -DskipTests
 RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
