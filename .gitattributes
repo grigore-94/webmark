@@ -1,1 +1,2 @@
-git config --global core.autocrlf true
+# Set the default behavior, in case people don't have core.autocrlf set.
+mvnw=text eol=unix
