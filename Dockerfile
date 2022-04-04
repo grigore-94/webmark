@@ -6,8 +6,8 @@ COPY .mvn .mvn
 COPY pom.xml .
 COPY src src
 RUN ls -alh
-RUN apt-get update && apt-get install dos2unix
-RUN dos2unix mvnw
+CMD apt-get update && apt-get install dos2unix
+CMD dos2unix mvnw
 RUN ./mvnw install -DskipTests
 RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
 
