@@ -13,7 +13,7 @@ pipeline {
     stage('Build') {
       steps {
         print "build"
-        bat 'git config core.autocrlf true'
+        bat 'git config core.autocrlf false'
         bat 'docker build -t grigore-94/webmark-1123:latest .'
       }
     }
